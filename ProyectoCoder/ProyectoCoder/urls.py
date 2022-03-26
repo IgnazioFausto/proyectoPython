@@ -19,6 +19,7 @@ from ProyectoCoder.views import root_view
 
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', root_view),
-    path('integrantes/', include('AppIntegrantes.urls'))
+    path('inicio/', include('AppIntegrantes.urls'))
 ]
