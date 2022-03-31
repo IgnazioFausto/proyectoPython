@@ -1,16 +1,15 @@
+from AppIntegrantes.models import Integrante
 from django.http import HttpResponse
-from django.shortcuts import render
 
 # Create your views here.
 
-def inicio(request):
+def familiares(request):
+    
+    integrante = Integrante(nombre='Juan', dni=12345678, fecha_nacimiento='1995-01-05')
+    
+    integrante.save()
+    
+    doc = f"Nombre {integrante.nombre} DNI {integrante.dni} Fecha Nacimiento {integrante.fecha_nacimiento}"
 
-    return render(request, "AppIntegrantes/inicio.html" )
+    return HttpResponse(doc)
 
-def estudiantes(request):
-
-    return render(request, "AppIntegrantes/estudiantes.html" )
-
-def profesores(request):
-
-    return render(request, "AppIntegrantes/profesores.html" )
